@@ -2,12 +2,27 @@
 {
   //日付をアップデートする
   window.onload = function () {
-    let today = new Date();
-    let dateToday = today.getDate();
+    const mois = [
+      'janvier',
+      'février',
+      'mars',
+      'avril',
+      'mai',
+      'juin',
+      'juillet',
+      'août',
+      'septembre',
+      'octobre',
+      'novembre',
+      'décembre',
+    ]
+    var date = new Date();
+    var day = date.getDate();
+    var month = date.getMonth();
+    var month = mois[month];
+    var dm = day + " " + month;
+    document.getElementById('date-today').textContent = dm;
   }
-
-  document.getElementById('date-yesterday').textContent = "sam 31 octobre";
-  
 
   const todos = [
     {id: 0, title: 'tâche 1', isDone: false},
