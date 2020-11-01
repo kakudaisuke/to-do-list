@@ -2,6 +2,8 @@
 {
   //日付をアップデートする
   window.onload = function () {
+    const semaine = [ 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche']
+    
     const mois = [
       'janvier',
       'février',
@@ -17,10 +19,12 @@
       'décembre',
     ]
     var date = new Date();
+    var dayOfTheWeek = date.getDay();
+    var dayOfTheWeek = semaine[dayOfTheWeek];
     var day = date.getDate();
     var month = date.getMonth();
     var month = mois[month];
-    var dm = day + " " + month;
+    var dm = dayOfTheWeek + " " + day + " " + month;
     document.getElementById('date-today').textContent = dm;
   }
 
